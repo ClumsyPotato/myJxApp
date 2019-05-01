@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/clumsypotato/myjxapp:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/flyingwhale/myjxapp:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,7 +18,7 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/clumsypotato/myjxapp:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/flyingwhale/myjxapp:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
@@ -26,5 +26,5 @@ profiles:
       - name: myjxapp
         chartPath: charts/myjxapp
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/clumsypotato/myjxapp'
+          image.repository: '{{.DOCKER_REGISTRY}}/flyingwhale/myjxapp'
           image.tag: '{{.DIGEST_HEX}}'

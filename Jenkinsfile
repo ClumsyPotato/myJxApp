@@ -3,7 +3,7 @@ pipeline {
     label "jenkins-maven"
   }
   environment {
-    ORG = 'clumsypotato'
+    ORG = 'fylingwhale'
     APP_NAME = 'myjxapp'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
